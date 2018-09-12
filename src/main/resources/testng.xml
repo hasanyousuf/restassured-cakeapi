@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Api Test Suite" thread-count="1" parallel="methods">
+<listeners>
+<listener class-name="org.sample.ExtentReportListener.ExtentReporterNG"></listener>
+</listeners>
+	<suite-files>
+		<suite-file path="src/main/resources/testng.xml" />
+	</suite-files>
+	<!-- <listeners> <listener class-name="uk.co.rightmove.ExtentReportListener.ExtentReporterNG"></listener> 
+		</listeners> -->
+	<test name="Api tests">
+		<!-- <packages> <package name="org.sample.tests"></package> </packages> -->
+		<parameter name="url" value="http://localhost"></parameter>
+		<parameter name="port" value="9000"></parameter>
+		<classes>
+			<!-- <class name="org.sample.tests.User"></class>-->
+			<class name="org.sample.tests.SystemInfo"></class> 
+			<class name="org.sample.tests.User"></class> 
+			<class name="org.sample.tests.Blog"></class> 
+		</classes>
+	</test>
+</suite>
